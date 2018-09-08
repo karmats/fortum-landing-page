@@ -55,11 +55,8 @@ header>.header-text {
 
 .wrapper {
     margin: 0 auto;
+    padding: 1rem;
     width: 800px;
-}
-
-main h1 {
-    text-align: center;
 }
 
 section {
@@ -71,12 +68,7 @@ section#usp {
 }
 
 section#usp>div>div>img {
-    display: inline-block;
     width: 70%;
-}
-
-section#about>button {
-    text-align: center;
 }
 
 article {
@@ -112,6 +104,7 @@ article {
 }
 
 .btn {
+    background-color: #ffffff;
     border: 1px solid black;
     border-radius: 1.5rem;
     color: black;
@@ -129,6 +122,7 @@ article {
 .btn:active {
     background-color: #CECECE;
 }
+
 .btn>.icon {
     width: 1rem;
     display: inline-block;
@@ -182,7 +176,40 @@ article {
     .gone-m {
         display: none;
     }
-    main {
+    main .wrapper {
+        overflow: hidden;
         width: auto;
+    }
+    section:last-child {
+        padding-bottom: 0;
+    }
+    section#usp {
+        overflow: hidden;
+    }
+    section#usp>div>div>img {
+        width: 800px;
+    }
+    .horizontal {
+        flex-direction: column;
+    }
+    .horizontal.row-reverse-m {
+        flex-direction: row-reverse;
+        width: 120%;
+    }
+    .horizontal.column-reverse-m {
+        flex-direction: column-reverse;
+    }
+    .horizontal.column-reverse-m>.attention-circle {
+        align-self: flex-end;
+    }
+    .card>img {
+        display: none;
+    }
+    .card>div {
+        padding: 0;
+    }
+    .btn.primary {
+        border-radius: 0;
+        width: 100%;
     }
 }
