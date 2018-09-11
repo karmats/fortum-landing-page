@@ -55,7 +55,6 @@ header>.header-text {
 
 .wrapper {
     margin: 0 auto;
-    padding: 1rem;
     width: 800px;
 }
 
@@ -65,10 +64,6 @@ section {
 
 section#usp {
     background-color: #ffffff;
-}
-
-section#usp>div>div>img {
-    width: 70%;
 }
 
 article {
@@ -84,15 +79,15 @@ article {
 }
 
 .card>img {
-    width: 300px;
     height: 200px;
+    padding-right: 2rem;
+    width: 300px;
 }
 
 .card>div {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    padding-left: 2rem;
 }
 
 .card>div>h3 {
@@ -147,13 +142,25 @@ article {
 }
 
 .horizontal {
+    align-items: stretch;
     display: flex;
-    align-items: center;
-    align-content: space-between;
 }
 
 .horizontal>* {
+    align-items: flex-start;
+    display: flex;
     flex: 0 1 auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.horizontal.align-center {
+    align-items: center;
+}
+
+.horizontal>img#full-circle {
+    align-self: center;
+    flex: 0 1 600px;
 }
 
 .text-center {
@@ -166,19 +173,27 @@ article {
     font-size: 0.75rem;
     font-weight: 700;
     height: 3rem;
-    width: 5rem;
     padding: 2rem 1rem;
     text-align: center;
     text-transform: uppercase;
+    width: 5rem;
 }
 
 @media only screen and (max-width: 800px) {
     .gone-m {
         display: none;
     }
-    main .wrapper {
+    .wrapper {
         overflow: hidden;
+        padding: 1rem;
         width: auto;
+    }
+    .card>img {
+        display: none;
+    }
+    .btn.primary {
+        border-radius: 0;
+        width: 100%;
     }
     section:last-child {
         padding-bottom: 0;
@@ -186,30 +201,21 @@ article {
     section#usp {
         overflow: hidden;
     }
-    section#usp>div>div>img {
-        width: 800px;
-    }
     .horizontal {
         flex-direction: column;
     }
     .horizontal.row-reverse-m {
         flex-direction: row-reverse;
+        justify-content: flex-end;
         width: 120%;
+    }
+    .horizontal>img#full-circle {
+        flex: 2 0 300px;
     }
     .horizontal.column-reverse-m {
         flex-direction: column-reverse;
     }
     .horizontal.column-reverse-m>.attention-circle {
         align-self: flex-end;
-    }
-    .card>img {
-        display: none;
-    }
-    .card>div {
-        padding: 0;
-    }
-    .btn.primary {
-        border-radius: 0;
-        width: 100%;
     }
 }
