@@ -206,6 +206,7 @@ article {
     }
     .horizontal.row-reverse-m {
         flex-direction: row-reverse;
+        justify-content: flex-end;
         width: 120%;
     }
     .horizontal>img#full-circle {
